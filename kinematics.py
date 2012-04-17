@@ -27,7 +27,7 @@ xf_uncertain = xf.subs({g: -Rational(98,10), v: 10, theta: pi/4, x0: 0,
 print "\n\nexpecatation and variance of xf when y0 is uncertain"
 print "E(xf)   = ", E(xf_uncertain, evaluate=False)
 print "        = ", E(xf_uncertain).evalf()
-print "Var(xf) = ", Var(xf_uncertain).evalf()
+print "Var(xf) = ", variance(xf_uncertain).evalf()
 
 # 4.2
 v_uncertain = Uniform(9, 11.5)
@@ -36,4 +36,4 @@ xf_uncertain = xf.subs({g: -Rational(98,10), v: v_uncertain,
                         theta: theta_uncertain, x0: 0, y0: y0_uncertain, yf: 0})
 
 print "\n\nComplex probability"
-print "P(theta>pi/4 given xf>16) = ", P(theta_uncertain>pi/4, xf_uncertain>16, numsamples=1000)
+print "P(theta>pi/4 given xu>16) = ", P(theta_uncertain>pi/4, xf_uncertain>16, numsamples=1000)

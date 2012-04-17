@@ -9,6 +9,6 @@ print "        = ", P(T>33).evalf()
 noise = Normal(0, 1.5)
 observation = T + noise
 
-T_posterior = Given(T, Eq(observation, 26))
+T_posterior = given(T, Eq(observation, 26))
 
-print "Density(T given T+noise==26) = ", Density(T_posterior)
+print "density(T given T+noise==26) = ", density(T_posterior)
